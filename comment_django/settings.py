@@ -25,7 +25,12 @@ SECRET_KEY = '%22^4+)e_#5kym_e#6)r!gn)0g%16w@f6lst_8=^q5%6=1j_m#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+COMMENTS_APP = 'fluent_comments'
+FLUENT_COMMENTS_FORM_CLASS = 'fluent_comments.forms.CompactLabelsCommentForm'
+FLUENT_COMMENTS_EXCLUDE_FIELDS = ('name', 'email', 'url', 'title')
+SITE_ID = 1
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -36,7 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'django_comments',
+    'fluent_comments',
+    'threadedcomments',
+    'comment_app'
 ]
 
 MIDDLEWARE = [
