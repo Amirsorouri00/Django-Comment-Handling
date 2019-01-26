@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "linux_comment_env/bin/python"
+    "python.pythonPath": "linux_comment_env/bin/python",
+    "python.linting.enabled": false
 }

@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
+from comment_app.views.rest.views import NewsViewSet, CommentViewSet
+
+router = DefaultRouter()
+router.register(r'news', NewsViewSet)
+router.register(r'comment', CommentViewSet)
 
 urlpatterns = [
+    path('api/v1/', include(router.urls)),
     path('admin/', admin.site.urls),
+    # url(r'^news/', include('comment_app.urls')),
+    # url(r'^comment_app/', include('comment_app.urls')),
 ]
